@@ -1,0 +1,7 @@
+Function calling itself
+
+1 - break bigger problem into small sub problem.
+2 - trust your recursion
+
+
+Linear Recursion: TC - O(n) SC - O(n)
