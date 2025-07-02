@@ -24,7 +24,7 @@ public:
         // Now backtrack it to reset state
         temp.pop_back();
 
-        // recursive call to see if there is combination with next index
+        // recursive call where we dont pick the element
         combSum(index + 1, target, temp, result, candidates);
 
     }
