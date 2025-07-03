@@ -1,0 +1,5 @@
+Dynamic Progrmming
+
+Approach:
+
+Recursion -> Memoization (top down) -> tabulation (bottom up ) -> exclude extra space
