@@ -3,3 +3,12 @@ Dynamic Progrmming
 Approach:
 
 Recursion -> Memoization (top down) -> tabulation (bottom up ) -> exclude extra space
+
+Memoization
+
+-> Initialize dp array/map with -1 
+-> before Function call check whether it has already been completed
+-> Before returning store it in dp array
+
+Tabulation 
+-> 
