@@ -11,4 +11,6 @@ Memoization
 -> Before returning store it in dp array
 
 Tabulation 
--> 
+-> Declare dp array
+-> Try to put base case in dp array
+-instead of recursion we will use iteration
