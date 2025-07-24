@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Breadth First Search
 class Solution {
   public:
     bool bfs(vector<int> &colors, queue<int> &q, vector<vector<int>> &adj, int startNode) {
@@ -37,6 +38,41 @@ class Solution {
         for(int i = 0; i < colors.size(); i++) {
             if(colors[i] == -1) {
              if(!bfs(colors, q, adj, i)) return false;   
+            }
+        }
+        
+        return true;
+    }
+};
+
+// Depth First Search
+class Solution {
+  public:
+    bool dfs(vector<int> &colors, vector<vector<int>> &adj, int startNode, int color) {
+        colors[startNode] = 1 - color;
+        
+        for(auto neighbour : adj[startNode]) {
+            if(colors[neighbour] == -1) {
+                if(!dfs(colors,adj, neighbour, colors[startNode])) return false;   
+            } else {
+                if(colors[neighbour] == colors[startNode]) return false;
+            } 
+        }
+        return true;
+    }
+
+    bool isBipartite(int V, vector<vector<int>> &edges) {
+        vector<vector<int>> adj(V);
+        for(auto edge : edges) {
+            adj[edge[0]].push_back(edge[1]);
+            adj[edge[1]].push_back(edge[0]);
+        }
+        
+        vector<int> colors(V, -1);
+        
+        for(int i = 0; i < colors.size(); i++) {
+            if(colors[i] == -1) {
+             if(!dfs(colors,adj, i,0)) return false;   
             }
         }
         
